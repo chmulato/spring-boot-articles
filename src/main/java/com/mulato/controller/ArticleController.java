@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.mulato.entity.Article;
 import com.mulato.service.IArticleService;
 
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:3000"}, maxAge = 4800, allowCredentials = "false") 
+@CrossOrigin(origins="http://localhost:4200",
+maxAge = 3600,
+allowCredentials = "false" ,
+methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT}) 
 @Controller
 @RequestMapping("user")
 public class ArticleController {
